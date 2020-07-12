@@ -5,12 +5,26 @@ state = {}
 render(){
     return (
         <div className="header">
-        <a href="#default" className="logo">Cats Adoption</a>
-        <div className="header-right">
-          <a className="active" href="#home">Home</a>
-          <a href="#contact">Contact</a>
-          <a href="#about">About</a>
-        </div>
+          <div className="navbar">
+          <div className="container">
+              <h3> <span>Cats</span> Adoption</h3>
+              <a href="#contact">contact</a>
+              <a href="#volunteer">cats</a>
+              <a href="#volunteer">volunteer</a>
+               <a href="#about us">about us</a>
+              <a  href="#home">Home</a>
+             
+          </div>
+          </div>
+          <div className="slider"> 
+          <div className="container"> 
+          <div className="intro">
+           <h2> ADOPT A CAT WE NEED YOUR HELP.</h2>
+           <button> <span>FIND A CAT TO ADOPT</span></button>
+          </div>
+          
+          </div>
+          </div>
       </div>
     )
 }
