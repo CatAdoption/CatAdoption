@@ -8,7 +8,8 @@ class SearchByBreed extends React.Component {
         this.state = {
             breedName: "",
             breedID: "",
-            breeds : []
+            breeds : [],
+            cats:[]
         };
     };
 
@@ -17,6 +18,16 @@ class SearchByBreed extends React.Component {
             breedID : breed.value,
             breedName : breed.label
         });
+        axios.get(`https://api.thecatapi.com/v1/images/search?breed_ids=${this.state.breedID}&include_breeds=true&limit=48&mime_types=jpg,png`).then(res =>{           
+            this.setState({
+                cats : res.data
+            });
+            // console.log(this.state.cats);
+            this.props.getCats(this.state.cats)
+        })
+        .catch((err)=>{
+            console.error(err)
+        })
     };
 
     componentDidMount(){
