@@ -1,7 +1,26 @@
 import React from 'react';
 import Select from 'react-select';
 import axios from 'axios';
+import "./style.css"
 
+const customStyles = {
+    option: (provided, state) => ({
+      ...provided,
+      borderBottom: '1px dotted pink',
+      color: state.isSelected ? 'red' : 'black',
+      padding: 20,
+    }),
+    control: () => ({
+      // none of react-select's styles are passed to <Control />
+      width: 200,
+    }),
+    singleValue: (provided, state) => {
+      const opacity = state.isDisabled ? 0.5 : 1;
+      const transition = 'opacity 300ms';
+  
+      return { ...provided, opacity, transition };
+    }
+  }
 class SearchByBreed extends React.Component {
     constructor(props) {
         super(props);
@@ -12,6 +31,30 @@ class SearchByBreed extends React.Component {
             cats:[]
         };
     };
+    customStyles = {
+        container: (base, state) => ({
+          ...base,
+          border: state.isFocused ? null : null,
+          transition:
+            "border-color 0.2s ease, box-shadow #d9d9d9, padding #d9d9d9",
+          "&:hover": {
+            boxShadow: "0 2px 4px 0  #d9d9d9"
+          }
+        }),
+        control: (base, state) => ({
+          ...base,
+          background: "#d9d9d9"
+        }),
+        valueContainer: (base, state) => ({
+          ...base,
+          background: "#d9d9d9"
+        }),
+        multiValue: (base, state) => ({
+          ...base,
+          background: "#d9d9d9",
+          maxWidth: "50px"
+        })
+      };
 
     handleChange(breed){
         this.setState({
@@ -45,12 +88,16 @@ class SearchByBreed extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className = "search">
+                <div className = "container">
+                <h2> SEARCH BY BREED </h2>
                 <Select
+                styles = {this.customStyles}
                     onChange = {this.handleChange.bind(this)}
                     options = {this.state.breeds}
                 />
-                <h5>{this.state.breedName}</h5>
+                <h2>{this.state.breedName}</h2>
+                </div>
             </div>
         );
     }

@@ -11,7 +11,6 @@ class CatsList extends React.Component {
     return (
         <div className="featuredCats">
         <div className="container">
-            <h2>SEARCH ON CATS BY BREED: </h2>
             <div className="featuedList">
                 {cats.map((cat,index)=>
                 <div key ={index}><img src= {cat.url}/></div>
