@@ -1,4 +1,4 @@
-.search h2{
+h2{
     margin-top: 60px;
     font-size: 30px;
     font-weight: 700;
@@ -14,5 +14,5 @@
 .search{
     font-weight: 700; 
     font-size: 20px;
-    color: white;
+    color: #333333;
 }
