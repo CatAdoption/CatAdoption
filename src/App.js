@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from "./Components/HeaderComponent/Header.js"
-import User from "./Components/User/User.js"
+//import User from "./Components/User/User.js"
 import CatsList from "./Components/CatsList/CatsList.js"
 import SearchByBreed from "./Components/Search By Breed Component/SearchByBreed.js"
 class App extends React.Component {
