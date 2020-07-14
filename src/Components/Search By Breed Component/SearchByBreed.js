@@ -96,7 +96,6 @@ class SearchByBreed extends React.Component {
                     onChange = {this.handleChange.bind(this)}
                     options = {this.state.breeds}
                 />
-                <h2>{this.state.breedName}</h2>
                 </div>
             </div>
         );
