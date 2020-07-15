@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import Header from "./Components/HeaderComponent/Header.js"
-//import User from "./Components/User/User.js"
 import CatsList from "./Components/CatsList/CatsList.js"
-import SearchByBreed from "./Components/Search By Breed Component/SearchByBreed.js"
+// import SearchByBreed from "./Components/Search By Breed Component/SearchByBreed.js"
+import Footer from "./Components/FooterComponent/FooterComponent.js"
 class App extends React.Component {
   constructor(props){
     super(props);
@@ -12,7 +12,6 @@ class App extends React.Component {
     }
   }
   getCats = (cats)=>{
-  this.setState({cats:[]})
   this.setState({cats:cats})
   console.log(cats)
   }
@@ -20,10 +19,9 @@ class App extends React.Component {
     return (
     <div className="App">
       <Header />
-      <SearchByBreed  getCats = {this.getCats}/>
-      <CatsList  cats = {this.state.cats}/>
-      
-      {/* <User  /> */}
+      <CatsList getCats = {this.getCats} cats = {this.state.cats}/>  
+      <Footer /> 
+   
     </div>
   );
 }

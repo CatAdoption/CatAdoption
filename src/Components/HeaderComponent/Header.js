@@ -8,11 +8,11 @@ render(){
           <div className="navbar">
           <div className="container">
               <h3> <span>Cats</span> Adoption</h3>
-              <a href="#contact">contact</a>
+              {/* <a href="#contact">contact</a>
               <a href="#volunteer">cats</a>
               <a href="#volunteer">volunteer</a>
                <a href="#about us">about us</a>
-              <a  href="#home">Home</a>
+              <a  href="#home">Home</a> */}
              
           </div>
           </div>

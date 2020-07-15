@@ -1,10 +1,14 @@
 .featuredCats{
     padding-top: 30px;
     padding-bottom: 30px;
+    
 
 }
 .featuredCats .featuedList {
     overflow: hidden;
+}
+.featuredCats .container {
+   margin-right:30px;
 }
 .featuredCats h2{
     font-size: 30px;
@@ -14,19 +18,20 @@
 }
  .featuedList >div {
     float: left;
-    width:25%;
-    margin-bottom: 5px;
+    width:30%;
+    margin-bottom: 12px;
+    margin-right: 3px;
 }
 
 
 .featuedList > div img {
     display: inline-block;
     resize: both;
-    width: 85%;
-    height:300px;
+    width: 95%;
+    height:280px;
     widows: 92%;
-    margin-right:2px;
-    margin-left:2px;
+    margin-right:5px;
+    margin-left:5px;
     border-radius: 5px;
 }
 
