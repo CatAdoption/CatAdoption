@@ -12,6 +12,7 @@ class App extends React.Component {
     }
   }
   getCats = (cats)=>{
+  this.setState({cats:[]})
   this.setState({cats:cats})
   console.log(cats)
   }
