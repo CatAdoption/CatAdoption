@@ -1,7 +1,7 @@
 var CatsRouter= require('express').Router();
 var CatsController = require('./CatsController');
 
-// Create route handlers for each of the methods in CatsController
- CatsRouter.get('/', CatsController.retrieve);
+// Create route handlers for the required methods in CatsController
+ CatsRouter.post('/Adopt', CatsController.create);
 
 module.exports = CatsRouter;

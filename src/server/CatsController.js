@@ -1,34 +1,40 @@
 var db = require('./../database/index.js');
 var CatUserModel = db.CatUserModel 
 
-/*
-exports.create = (req, res) => {
+
+exports.create = (req, res) => {  
     // Validate request
-    if (!req.body.id) {
+    if (!req.body) {
         res.status(400).send({ message: "Content can not be empty!" });
         return;
     }
-    
-    // Create a CatUserModelSchema
+    const{firstName,lastName,email,phone,catBreed,catID,imageUrl} = req.body
+
+    // Create an instance of the CatUserModel. 
     const CatUserModelDoc = new CatUserModel({
-        cat: req.body.cat,
-        user: req.body.user
+      firstName : firstName,
+      lastName : lastName,
+      email :email,
+      phone : phone,
+      catBreed : catBreed,
+      catID: catID,
+      imageUrl : imageUrl 
     });
 
     // Save Schema in the database
     CatUserModelDoc
     .save()
     .then(data => {
+        console.log('Model Created');
         res.send(data);
     })
     .catch(err => {
         res.status(500).send({
-        message:
-            err.message || "Some error occurred while creating the CatUserModel."
+        message: err.message || "Some error occurred while Saving to Database."
         });
     });
   };
-*/
+
 
 //retrieve all CatUserModelDoc
 exports.retrieve = (req, res) => {

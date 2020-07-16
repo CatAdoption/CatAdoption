@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 import React from 'react';
 import  "./styleOne.css"
 import CatListElement from "./../CatListElementComponent/CatListElement.js"
@@ -27,38 +28,35 @@ prev = ()=>{
     this.setState({step:step -1})
 }
 
-  render() {
-      const{cats} = this.props
-      const{step} = this.state
-      switch(step){
-          case 1:
-            return (
-                <div>
+render() {
+  const{cats} = this.props
+  const{step} = this.state
+  switch(step){
+    case 1:
+        return (
+            <div>
                 <SearchByBreed getCats = {this.props.getCats} />
                 <div className="featuredCats">
-                <div className="container">
-                    <div className="featuedList">
-                        {cats.map((cat,index)=>
-                        <div key ={index}><img src= {cat.url} alt="" onClick={this.nextStep.bind(this,cat)} />
-                        </div>
-                        )}
-                    
-                </div>  
+                    <div className="container">
+                        <div className="featuedList">
+                            {cats.map((cat,index)=>
+                            <div key ={index}><img src= {cat.url} alt="" onClick={this.nextStep.bind(this,cat)} />
+                            </div>
+                            )}                    
+                        </div>  
+                    </div>
                 </div>
-                </div>
-                </div>
+            </div>
             )
-            case 2:
-            return(
-            <CatListElement previous = {this.prev}catElement={this.state.arr} cont ={this.cont} />  
-            )
-            case 3:
-                return (
-                <User  previous = {this.prev} catArr = {this.state.arr}/>
-                )
-      }
-    
-  
+    case 2:
+        return(
+            <CatListElement previous = {this.prev} catElement={this.state.arr} cont ={this.cont}/>  
+        )
+    case 3:
+        return (
+            <User  previous = {this.prev} catArr = {this.state.arr}/>
+        )
+  }
 }
 }
 

@@ -19,6 +19,7 @@ class CatListElement extends React.Component {
       this.props.previous()
       }
     render(){
+      //console.log(this.props.catElement);
       return(
 <div className="catListElement">
   <div className="container">
@@ -78,7 +79,7 @@ class CatListElement extends React.Component {
       </div>
     </div>
     <div className="returnToSearch">
-          <button onClick={this.previous}> {"<- "} Return to search page</button>
+          <button onClick={this.previous}> {"<="} Return to search page</button>
         </div>
   </div>
 </div>

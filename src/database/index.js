@@ -13,11 +13,13 @@ var CatUserSchema = mongoose.Schema({
         firstName:{type: String},
         lastName:{type: String},
         email:{type: String},
+        phone: {type: Number},
         catBreed:{type: String},
+        catID : {type: String},
         imageUrl:{type: String}    
 });
 
  //build models for our schema
-let CatUserModel = mongoose.model('CatUser', CatUserSchema);
+let CatUserModel = mongoose.model('Adoption', CatUserSchema);
   
 module.exports.CatUserModel = CatUserModel;
