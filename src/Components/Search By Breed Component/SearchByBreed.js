@@ -3,24 +3,8 @@ import Select from 'react-select';
 import axios from 'axios';
 import "./style.css"
 
-const customStyles = {
-    option: (provided, state) => ({
-      ...provided,
-      borderBottom: '1px dotted pink',
-      color: state.isSelected ? 'red' : 'black',
-      padding: 20,
-    }),
-    control: () => ({
-      // none of react-select's styles are passed to <Control />
-      width: 200,
-    }),
-    singleValue: (provided, state) => {
-      const opacity = state.isDisabled ? 0.5 : 1;
-      const transition = 'opacity 300ms';
-  
-      return { ...provided, opacity, transition };
-    }
-  }
+
+
 class SearchByBreed extends React.Component {
     constructor(props) {
         super(props);
@@ -61,9 +45,17 @@ class SearchByBreed extends React.Component {
             breedID : breed.value,
             breedName : breed.label
         });
-        axios.get(`https://api.thecatapi.com/v1/images/search?breed_ids=${this.state.breedID}&include_breeds=true&limit=48&mime_types=jpg,png`).then(res =>{           
+        axios.get(`https://api.thecatapi.com/v1/images/search?breed_ids=${this.state.breedID}&include_breeds=true&limit=100&mime_types=jpg,png`,{headers: {
+            'x-api-key': '8b7d4780-a628-4ff2-b8a5-dc2c4cdbdfe4'
+          }}).then(res =>{ 
+              var filtredCats = [];
+            for(var i = 0 ; i<res.data.length ; i++){
+                if(res.data[i]['breeds'].length > 0){
+                    filtredCats.push(res.data[i])
+                }
+            }  
             this.setState({
-                cats : res.data
+                cats : filtredCats
             });
             // console.log(this.state.cats);
             this.props.getCats(this.state.cats)
@@ -96,6 +88,7 @@ class SearchByBreed extends React.Component {
                     onChange = {this.handleChange.bind(this)}
                     options = {this.state.breeds}
                 />
+                <h2>{this.state.breedName}</h2>
                 </div>
             </div>
         );
