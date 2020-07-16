@@ -12,10 +12,10 @@ state = {
     senderMessage:''
 }
 
-handleChange = (e)=>{
+handleChange = (e) => {
     this.setState({[e.target.name]:e.target.value});
   }
-  handleSubmit = (e)=>{
+  handleSubmit = (e) => {
     e.preventDefault();
     const{senderName,senderEmail,senderMessage} = this.state;
    console.log(senderName, senderEmail, senderMessage);
@@ -24,10 +24,10 @@ handleChange = (e)=>{
     senderEmail : senderEmail,
     senderMessage :senderMessage,
    })
-  .then(function (response) {
+  .then((response) => {
     console.log(response);
   })
-  .catch(function (error) {
+  .catch((error) => {
     console.error(error);
   });
 }
