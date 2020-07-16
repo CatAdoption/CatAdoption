@@ -1,0 +1,43 @@
+
+    .slider .intro {
+        padding-top: 100px;
+        color:#FFF;
+        font-weight: bold;
+        text-align: center;
+       }
+  .slider {
+    background-color:#111111;
+    height: 450px;
+    background-image: url("./banner-bg.jpg");
+    /* background-position: center; */
+    background-size: cover;
+    /* filter: brightness(60%); */
+    }
+    .slider .intro h2 {
+     margin-left:250px;
+     margin-top: 0px;
+     text-align: center;
+     font-size: 50px;
+     width:600px;
+     border-top: 3px solid #FFF;
+     border-bottom: 3px solid #FFF;
+    }
+
+     .intro button  {
+        margin:0px;
+        background-color:#FFF;
+        color: #333333;
+        width:300px;
+        font-size: 20px;
+        border: 1.5px solid #FFF;
+        font-weight:bold ;
+        border-radius: 4px;
+       } 
+
+       .intro button:hover {
+        font-weight:bold ;
+        color: #FFF;
+        background:none;
+        transform: scale(1, 1); 
+    }
+    
