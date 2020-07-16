@@ -19,7 +19,15 @@ var CatUserSchema = mongoose.Schema({
         imageUrl:{type: String}    
 });
 
+var ContactSchema = mongoose.Schema({
+    senderName : {type: String},
+    senderEmail : {type: String},
+    senderMessage :{type: String}
+});
+
  //build models for our schema
 let CatUserModel = mongoose.model('Adoption', CatUserSchema);
+let ContactModel = mongoose.model('Contact', ContactSchema);
   
 module.exports.CatUserModel = CatUserModel;
+module.exports.ContactModel = ContactModel;

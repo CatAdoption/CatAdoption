@@ -13,13 +13,13 @@ state = {
 }
 
 handleChange = (e)=>{
-    this.setState({[e.target.name]:e.target.value})
+    this.setState({[e.target.name]:e.target.value});
   }
   handleSubmit = (e)=>{
     e.preventDefault();
-    const{senderName,senderEmail,senderMessage}=this.state
-   console.log(senderName,senderEmail,senderMessage)
-   axios.post('http://localhost:4000/contact', {
+    const{senderName,senderEmail,senderMessage} = this.state;
+   console.log(senderName, senderEmail, senderMessage);
+   axios.post('/Contact', {
     senderName : senderName,
     senderEmail : senderEmail,
     senderMessage :senderMessage,
@@ -31,8 +31,7 @@ handleChange = (e)=>{
     console.error(error);
   });
 }
-render(){
-    
+render(){    
     return (
         <div className="main">
         <div className="contact">
@@ -42,8 +41,8 @@ render(){
               <p>Tell us what you need and we will contact with you later</p>
               <address>578 Jalaa st. Gaza Remal Area</address>
               <p>
-                <strong>Email: </strong>CatAdopt@gmail.com <br />
-                <strong>Phone: </strong>+970596178618 <br />
+                <strong>Email: </strong>CatAdopt@gmail.com<br/>
+                <strong>Phone: </strong>+970596178618<br/>
               </p>
             </div>
       
@@ -91,11 +90,8 @@ render(){
           </div>
         </div>
       </div>
-      
-   
-
     )
-}
+  }
 }
 
 export default Footer
