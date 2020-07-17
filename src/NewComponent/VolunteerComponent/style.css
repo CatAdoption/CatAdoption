@@ -1,0 +1,54 @@
+#voluteer{
+    background-image: url("./cat.jpg");
+    background-size: cover;
+    width: 1170;
+    height: 50%;
+    overflow: hidden;
+    background-position:center-top;
+    background-position-y: 45%;
+    padding:80px;
+    text-align: center;
+
+}
+
+#voluteer h1{
+    font-size: 50px;
+    margin-bottom: 5px;
+    text-align: center;
+    float: center;
+}
+#voluteer p{
+    font-size: 25px;
+    margin-top:20px;
+    text-align: center;
+    float: center;
+}
+
+
+#voluteer a {
+    margin:0px;
+    background-color:#FFF;
+    color: #333333;
+    width:250px;
+    height: 50px;
+    font-size: 20px;
+    border: 1.5px solid #FFF;
+    font-weight:bold ;
+    border-radius: 4px;
+    margin-top: 5px;
+    padding-top: 8px;
+    padding-bottom: 40px;
+    
+   } 
+
+   #voluteer a:hover {
+    font-weight:bold ;
+    color: #FFF;
+    background:none; 
+}
+
+.form-group span{
+    font-weight:bold ;
+    color: #333333;
+    background:none; 
+}
