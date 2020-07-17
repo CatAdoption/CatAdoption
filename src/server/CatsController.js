@@ -1,6 +1,7 @@
 var db = require('./../database/index.js');
 var CatUserModel = db.CatUserModel; 
 var ContactModel = db.ContactModel;
+var VolunteerModel = db.VolunteerModel;
 
 
 exports.create = (req, res) => {  
@@ -35,6 +36,8 @@ exports.create = (req, res) => {
         });
     });
   };
+
+
   exports.createContact = (req, res) => { 
       if (!req.body) {
         res.status(400).send({ message: "Content can not be empty!" });
@@ -62,6 +65,38 @@ exports.create = (req, res) => {
         });
     });
   }
+
+ // Create an instance of the VolunteerModel. 
+  exports.createVolunteer = (req, res) => { 
+    console.log(req.body)
+    if (!req.body) {
+      res.status(400).send({ message: "Content can not be empty!" });
+      return;
+  }
+  const{firstName, lastName, email,adress,mobile,message,CheckedDays} = req.body
+  const VolunteerModelDoc = new VolunteerModel({
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    adress:adress ,
+    mobile: mobile,
+    message: message,
+    CheckedDays: CheckedDays,
+  });
+
+  // Save Schema in the database
+  VolunteerModelDoc
+  .save()
+  .then(data => {
+      console.log('Model Created');
+      res.send(data);
+  })
+  .catch(err => {
+      res.status(500).send({
+      message: err.message || "Some error occurred while Saving to Database."
+      });
+  });
+}
   
 // //retrieve all CatUserModelDoc
 // exports.retrieve = (req, res) => {

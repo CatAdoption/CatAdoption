@@ -27,7 +27,7 @@ class User extends React.Component {
     e.preventDefault();
     const{firstName,lastName,email,phone,catBreed,catID,catImg} = this.state
     console.log(firstName,lastName,email,phone,catBreed,catID,catImg)
-    axios.post('/Adopt', {
+    axios.post('http://localhost:4000/Adopt', {
       firstName : firstName,
       lastName : lastName,
       email :email,

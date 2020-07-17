@@ -24,10 +24,22 @@ var ContactSchema = mongoose.Schema({
     senderEmail : {type: String},
     senderMessage :{type: String}
 });
-
+var VolunteerSchema = mongoose.Schema({
+    firstName: { type: String },
+    lastName: { type: String},
+    email: { type: String },
+    adress: { type: String },
+    mobile: { type: Number },
+    message: { type: String },
+    CheckedDays: { type: String }
+   
+  });
+  
  //build models for our schema
+let VolunteerModel = mongoose.model("VolunteerInfo", VolunteerSchema);
 let CatUserModel = mongoose.model('Adoption', CatUserSchema);
 let ContactModel = mongoose.model('Contact', ContactSchema);
   
 module.exports.CatUserModel = CatUserModel;
 module.exports.ContactModel = ContactModel;
+module.exports.VolunteerModel = VolunteerModel;
