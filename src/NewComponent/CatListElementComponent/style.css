@@ -22,6 +22,7 @@
 .catListElement .info h2{
   margin:40px 0 20px 40px;
   font-size: 30px;
+  text-align: center;
   border-top:#bfbfbf solid 0.5px ;
   border-bottom:#bfbfbf solid 0.5px ;
 }

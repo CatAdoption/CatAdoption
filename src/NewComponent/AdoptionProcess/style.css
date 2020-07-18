@@ -1,0 +1,41 @@
+section{
+
+    margin-top: 7px; 
+    margin-bottom: 10px;
+    background-color:    #F9F9FF;
+    padding-top: 10px;
+    padding-bottom: 0px;
+  float:center;
+  overflow: hidden;
+}
+
+section .container{
+    width:100%;
+    float: center;
+}
+.row{
+    margin-top:30px;
+    margin-bottom: 30px;
+}
+.row a{
+    font-weight: bolder;
+    padding-top: 20px;
+    text-decoration: none;
+    color: #000047;
+ ;
+}
+.row >div {
+
+    margin-left: 40px;
+    margin-right: 40px;
+}
+section p{
+    color:#737373
+}
+section h1{
+    font-weight:600;
+    color: #000047;
+}
+section  span {
+  font-size: 30px;
+}

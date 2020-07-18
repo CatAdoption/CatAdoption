@@ -1,31 +1,44 @@
-import React from 'react';
-import './App.css';
-import Header from "./Components/HeaderComponent/Header.js"
-import CatsList from "./Components/CatsList/CatsList.js"
-// import SearchByBreed from "./Components/Search By Breed Component/SearchByBreed.js"
-import Footer from "./Components/FooterComponent/FooterComponent.js"
-class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-    cats : []
-    }
-  }
-  getCats = (cats)=>{
-  this.setState({cats:cats})
-  console.log(cats)
-  }
-  render(){
+
+import React, { Component } from 'react'
+import { BrowserRouter as Router,Switch, Route } from 'react-router-dom'
+import {Home} from './NewComponent/HeaderComponent/Header.js'
+import About from './NewComponent/AboutComponent/About.js'
+import VolunteerForm from './NewComponent/VolunteerComponent/volunteerForm.js'
+import CatsList from './NewComponent/CatsList/CatsList.js'
+import Landing from './NewComponent/LandingComponent/Landing'
+import SignUp from './NewComponent/SignUp/SignUpComponent'
+import {Login,PrivateRoute }from './NewComponent/userAuth/userlogin'
+// import ProtectedRoute from './NewComponent/userAuth/userlogin'
+
+
+class NotFound extends Component {
+  render() {
     return (
-    <div className="App">
-      <Header />
-      <CatsList getCats = {this.getCats} cats = {this.state.cats}/>  
-      <Footer /> 
-   
-    </div>
-  );
-}
- 
+      <h1>404 NOT FOUND</h1>
+    )
   }
- 
-export default App;
+}
+class App extends Component {
+  render() {
+    return (
+     <Router>
+       <div className="App">
+       <Switch>
+       <Route exact path="/"  component={Landing} />
+       <Route exact path="/signUp" component={SignUp} />
+       <Route exact path="/login" component={Login} />
+       <PrivateRoute exact path="/home"  component={Home}></PrivateRoute>
+      <PrivateRoute path="/about" component={About}></PrivateRoute>
+      <PrivateRoute path="/volunteer" component={VolunteerForm}></PrivateRoute>
+      <PrivateRoute exact path="/Cats"  component={CatsList}></PrivateRoute>
+      <Route path="*" component={NotFound}  />
+            
+     </Switch>
+     </div>
+    
+     </Router>
+    )
+  }
+}
+
+export default App

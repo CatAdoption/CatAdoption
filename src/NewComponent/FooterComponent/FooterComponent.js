@@ -12,37 +12,38 @@ state = {
     senderMessage:''
 }
 
-handleChange = (e) => {
-    this.setState({[e.target.name]:e.target.value});
+handleChange = (e)=>{
+    this.setState({[e.target.name]:e.target.value})
   }
-  handleSubmit = (e) => {
+  handleSubmit = (e)=>{
     e.preventDefault();
-    const{senderName,senderEmail,senderMessage} = this.state;
-   console.log(senderName, senderEmail, senderMessage);
-   axios.post('/Contact', {
+    const{senderName,senderEmail,senderMessage}=this.state
+   console.log(senderName,senderEmail,senderMessage)
+   axios.post('http://localhost:4000/contact', {
     senderName : senderName,
     senderEmail : senderEmail,
     senderMessage :senderMessage,
    })
-  .then((response) => {
+  .then(function (response) {
     console.log(response);
   })
-  .catch((error) => {
+  .catch(function (error) {
     console.error(error);
   });
 }
-render(){    
+render(){
+    
     return (
         <div className="main">
         <div className="contact">
-          <div className="cotainer">
+          <div className="container">
             <div className="info">
               <h2>CONTACT US</h2>
               <p>Tell us what you need and we will contact with you later</p>
               <address>578 Jalaa st. Gaza Remal Area</address>
               <p>
-                <strong>Email: </strong>CatAdopt@gmail.com<br/>
-                <strong>Phone: </strong>+970596178618<br/>
+                <strong>Email: </strong>CatAdopt@gmail.com <br />
+                <strong>Phone: </strong>+970596178618 <br />
               </p>
             </div>
       
@@ -90,8 +91,11 @@ render(){
           </div>
         </div>
       </div>
+      
+   
+
     )
-  }
+}
 }
 
 export default Footer

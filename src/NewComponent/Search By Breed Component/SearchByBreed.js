@@ -4,7 +4,6 @@ import axios from 'axios';
 import "./style.css"
 
 
-
 class SearchByBreed extends React.Component {
     constructor(props) {
         super(props);
@@ -13,8 +12,9 @@ class SearchByBreed extends React.Component {
             breedID: "",
             breeds : [],
             cats:[]
-        };
-    };
+        }
+    }
+
     customStyles = {
         container: (base, state) => ({
           ...base,
@@ -47,19 +47,19 @@ class SearchByBreed extends React.Component {
         });
         axios.get(`https://api.thecatapi.com/v1/images/search?breed_ids=${this.state.breedID}&include_breeds=true&limit=100&mime_types=jpg,png`,{headers: {
             'x-api-key': '8b7d4780-a628-4ff2-b8a5-dc2c4cdbdfe4'
-          }}).then(res => { 
-            var filtredCats = [];
-                for(var i = 0 ; i<res.data.length ; i++){
-                    if(res.data[i]['breeds'].length > 0){
-                        filtredCats.push(res.data[i])
-                    }
-                }  
-                this.setState({
-                    cats : filtredCats
-                });
-                // console.log(this.state.cats);
-                this.props.getCats(this.state.cats)
-            })
+          }}).then(res =>{ 
+              var filtredCats = [];
+            for(var i = 0 ; i<res.data.length ; i++){
+                if(res.data[i]['breeds'].length > 0){
+                    filtredCats.push(res.data[i])
+                }
+            }  
+            this.setState({
+                cats : filtredCats
+            });
+            // console.log(this.props.bis);
+            this.props.getCats(this.state.cats)
+        })
         .catch((err)=>{
             console.error(err)
         })
@@ -74,6 +74,7 @@ class SearchByBreed extends React.Component {
             this.setState({
                 breeds : allBreeds
             });
+            console.log(this.state.breeds);
         });
     }
 
@@ -83,7 +84,7 @@ class SearchByBreed extends React.Component {
                 <div className = "container">
                 <h2> SEARCH BY BREED </h2>
                 <Select
-                    styles = {this.customStyles}
+                styles = {this.customStyles}
                     onChange = {this.handleChange.bind(this)}
                     options = {this.state.breeds}
                 />

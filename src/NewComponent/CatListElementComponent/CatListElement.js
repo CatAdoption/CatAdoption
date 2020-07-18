@@ -4,6 +4,8 @@ import home from "./home.png"
 import health from "./health.png"
 import life from "./life.png"
 import type from "./type.png"
+import Footer from "./../FooterComponent/FooterComponent.js"
+import HeaderForEvery from "./../HeaderForEvery/HeaderForEvery.js"
 class CatListElement extends React.Component {
 
   constructor(props) {
@@ -19,8 +21,9 @@ class CatListElement extends React.Component {
       this.props.previous()
       }
     render(){
-      //console.log(this.props.catElement);
       return(
+        <div>
+ {HeaderForEvery('Cat Details')}
 <div className="catListElement">
   <div className="container">
     <div className="picture">
@@ -65,7 +68,7 @@ class CatListElement extends React.Component {
         </div>
         <div className="content">
           <div className="icon">
-            <img src={type} alt="type " />
+            <img src={type} alt="type" />
           </div>
 
           <div className="text">
@@ -79,9 +82,11 @@ class CatListElement extends React.Component {
       </div>
     </div>
     <div className="returnToSearch">
-          <button onClick={this.previous}> {"<="} Return to search page</button>
+          <button onClick={this.previous}> {"<- "} Return to search page</button>
         </div>
   </div>
+</div>
+<Footer />
 </div>
       )
     }
@@ -89,21 +94,3 @@ class CatListElement extends React.Component {
 
   export default CatListElement
 
-
-//   <div className = "catListElement">
-//   <h1>My name is {this.state.name}! </h1>
-//   <br/>
-//   <img src = {this.props.catElement.url}/>
-//   <br/>
-//   <br/>
-//   <br/>
-//   <p><span>&nbsp;&nbsp;</span>Facts about me:</p>
-//   <ul>
-//     <li>Id:{this.state.id}</li>
-//     <li>Origin:{this.state.origin}</li>
-//     <li>Lifespan:{this.state.lifespan}</li>
-//     <li>Temparent:{this.props.catElement.breeds[0]['temperament']}</li>
-//     <li>Health Issues{this.state.healthIssues}</li>
-//     <li>Description:{this.state.description}</li>
-//   </ul>
-// </div>
