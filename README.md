@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+## to run this project:
+1- clone the final new branch
+ git clone -b finalNewVersion https://github.com/CatAdoption/cats_adoption.git
+2- npm install
+3- to start the client sider npm run begin
+4- to open server side npm start
 ## Available Scripts
 
 In the project directory, you can run:
