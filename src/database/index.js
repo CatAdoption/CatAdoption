@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://AbdHussein:pas$w0rd1234@cluster0-3xayr.mongodb.net/cat_adoption?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://<USERNAME>:<PASSWORD>@cluster0-3xayr.mongodb.net/cat_adoption?retryWrites=true&w=majority',
  {useNewUrlParser: true, useUnifiedTopology: true }, (err) =>{
     if(err){
         console.log("Error: ", err);
